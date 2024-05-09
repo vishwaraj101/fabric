@@ -73,17 +73,17 @@ public class CompareFilter implements Filter {
         if (null != rhsValue && null != lhsValue) {
             int res = lhsValue.compareTo(rhsValue);
             if (res == 0) {
-                if (comparisonOperatorLocal.equals(LTE)
-                        || comparisonOperatorLocal.equals(GTE)
-                        || comparisonOperatorLocal.equals(EQ)) {
+                if (LTE.equals(comparisonOperatorLocal)
+                        || GTE.equals(comparisonOperatorLocal)
+                        || EQ.equals(comparisonOperatorLocal)) {
                     return true;
                 }
             } else if (res > 0) {
-                if (comparisonOperatorLocal.equals(GT) || comparisonOperatorLocal.equals(GTE)) {
+                if (GT.equals(comparisonOperatorLocal) || GTE.equals(comparisonOperatorLocal)) {
                     return true;
                 }
             } else {
-                if (comparisonOperatorLocal.equals(LT) || comparisonOperatorLocal.equals(LTE)) {
+                if (LT.equals(comparisonOperatorLocal) || LTE.equals(comparisonOperatorLocal)) {
                     return true;
                 }
             }
